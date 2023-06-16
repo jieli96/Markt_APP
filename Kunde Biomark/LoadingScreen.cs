@@ -32,7 +32,7 @@ namespace Kunde_Biomark
             
             loadingBarValue+= 5;
             
-            lblLoadingProgress.Text = loadingBarValue.ToString()+"";
+            lblLoadingProgress.Text = loadingBarValue.ToString()+" %";
             loadingProgressBar.Value = loadingBarValue;
 
             // wenn der maximaleValue  erreicht stop
