@@ -1,0 +1,7 @@
+Fülle die Progress Bar von 0 auf 100 in 5 Sekunden
+- setze die Eingenschaft "Value" auf einen höheren wert
+- wenn Value == 100 beenden
+
+1. start timer
+2. timer tickt
+3. stop timer
