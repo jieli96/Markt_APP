@@ -39,10 +39,18 @@ namespace Kunde_Biomark
             if(loadingBarValue == loadingProgressBar.Maximum)
             {
                 loadingbarTimer.Stop();
-                //Finish loading
-            }
-        }
 
+                //Finish loading to show Main View
+                MainView mainView = new MainView();
+                
+                    mainView.Show();
+                     this.Hide();
+                //LoadingScreen loadingScreen = new LoadingScreen();
+                    //loadingScreen.Hide();
+
+            }
+            
+        }
        
     }
 }
