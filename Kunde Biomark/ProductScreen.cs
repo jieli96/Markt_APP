@@ -17,11 +17,14 @@ namespace Kunde_Biomark
             InitializeComponent();
         }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void TextBox1_TextChanged(object sender, EventArgs e)
         {
-            MainView mainView = new MainView();
-            mainView.Show();
-            this.Hide();
+
+        }
+
+        private void Label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -5,3 +5,17 @@ Fülle die Progress Bar von 0 auf 100 in 5 Sekunden
 1. start timer
 2. timer tickt
 3. stop timer
+
+
+Produkte Seite
+Eingenschaften für Produkte einbauen
+- Name -> string
+- Marke -> string
+-Kategorie -> string
+-Preis -> double
+
+Datenmodell
+-neue Produkte anlegen
+- Produkte löschen
+-Produkte bearbeiten
+- TextFelder leeren
