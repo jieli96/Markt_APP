@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kunde Biomark", "Kunde Biomark\Kunde Biomark.csproj", "{8D4DF3DF-6085-43D9-B190-35B0D46B2932}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kunde_MarktApp", "Kunde Biomark\Kunde_MarktApp.csproj", "{8D4DF3DF-6085-43D9-B190-35B0D46B2932}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
