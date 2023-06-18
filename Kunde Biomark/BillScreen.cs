@@ -16,7 +16,5 @@ namespace Kunde_Biomark
         {
             InitializeComponent();
         }
-
-        
     }
 }
