@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Kunde_Biomark
 {
-    public partial class Form1 : Form
+    public partial class BillScreen : Form
     {
-        public Form1()
+        public BillScreen()
         {
             InitializeComponent();
         }

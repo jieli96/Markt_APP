@@ -151,6 +151,12 @@ namespace Kunde_Biomark
             Clearfields();
             ShowProduct();
         }
-       
+
+        private void BttReturn_Click(object sender, EventArgs e)
+        {
+            MainView mainView = new MainView();
+            mainView.Show();
+            this.Hide();
+        }
     }
 }

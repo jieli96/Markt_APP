@@ -16,10 +16,11 @@ namespace Kunde_Biomark
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-           Application.Run(new LoadingScreen());
+           //Application.Run(new LoadingScreen());
            // Application.Run(new MainView());
 
            // Application.Run(new ProductScreen());
+            Application.Run(new BillScreen());
         }
         
     }

@@ -25,5 +25,12 @@ namespace Kunde_Biomark
 
            this.Hide();
         }
+
+        private void BttRechnnung_Click(object sender, EventArgs e)
+        {
+            BillScreen billScreen = new BillScreen();
+            billScreen.Show();
+            this.Hide();
+        }
     }
 }

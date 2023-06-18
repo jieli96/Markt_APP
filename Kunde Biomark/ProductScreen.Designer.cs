@@ -42,6 +42,7 @@
             this.bttEdit = new System.Windows.Forms.Button();
             this.bttDelete = new System.Windows.Forms.Button();
             this.productDGV = new System.Windows.Forms.DataGridView();
+            this.bttReturn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.productDGV)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,7 +65,7 @@
             this.txtProductName.ForeColor = System.Drawing.Color.White;
             this.txtProductName.Location = new System.Drawing.Point(100, 28);
             this.txtProductName.Name = "txtProductName";
-            this.txtProductName.Size = new System.Drawing.Size(268, 20);
+            this.txtProductName.Size = new System.Drawing.Size(166, 20);
             this.txtProductName.TabIndex = 1;
             // 
             // label2
@@ -108,7 +109,7 @@
             this.txtPrice.ForeColor = System.Drawing.Color.White;
             this.txtPrice.Location = new System.Drawing.Point(101, 135);
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(85, 20);
+            this.txtPrice.Size = new System.Drawing.Size(165, 20);
             this.txtPrice.TabIndex = 9;
             // 
             // label4
@@ -217,12 +218,26 @@
             this.productDGV.TabIndex = 14;
             this.productDGV.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ProductDGV_CellContentClick);
             // 
+            // bttReturn
+            // 
+            this.bttReturn.BackColor = System.Drawing.Color.Black;
+            this.bttReturn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.bttReturn.ForeColor = System.Drawing.Color.White;
+            this.bttReturn.Location = new System.Drawing.Point(465, 161);
+            this.bttReturn.Name = "bttReturn";
+            this.bttReturn.Size = new System.Drawing.Size(85, 25);
+            this.bttReturn.TabIndex = 15;
+            this.bttReturn.Text = "Menü";
+            this.bttReturn.UseVisualStyleBackColor = false;
+            this.bttReturn.Click += new System.EventHandler(this.BttReturn_Click);
+            // 
             // ProductScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(799, 461);
+            this.Controls.Add(this.bttReturn);
             this.Controls.Add(this.productDGV);
             this.Controls.Add(this.bttDelete);
             this.Controls.Add(this.bttEdit);
@@ -261,5 +276,6 @@
         private System.Windows.Forms.Button bttEdit;
         private System.Windows.Forms.Button bttDelete;
         private System.Windows.Forms.DataGridView productDGV;
+        private System.Windows.Forms.Button bttReturn;
     }
 }
