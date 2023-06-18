@@ -32,7 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtProductName = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtMark = new System.Windows.Forms.TextBox();
+            this.txtBrand = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -41,8 +41,8 @@
             this.bttClear = new System.Windows.Forms.Button();
             this.bttEdit = new System.Windows.Forms.Button();
             this.bttDelete = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.productDGV = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.productDGV)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -66,7 +66,6 @@
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(268, 20);
             this.txtProductName.TabIndex = 1;
-            
             // 
             // label2
             // 
@@ -80,15 +79,15 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Marke";
             // 
-            // txtMark
+            // txtBrand
             // 
-            this.txtMark.BackColor = System.Drawing.Color.Black;
-            this.txtMark.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtMark.ForeColor = System.Drawing.Color.White;
-            this.txtMark.Location = new System.Drawing.Point(101, 65);
-            this.txtMark.Name = "txtMark";
-            this.txtMark.Size = new System.Drawing.Size(165, 20);
-            this.txtMark.TabIndex = 3;
+            this.txtBrand.BackColor = System.Drawing.Color.Black;
+            this.txtBrand.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBrand.ForeColor = System.Drawing.Color.White;
+            this.txtBrand.Location = new System.Drawing.Point(101, 65);
+            this.txtBrand.Name = "txtBrand";
+            this.txtBrand.Size = new System.Drawing.Size(165, 20);
+            this.txtBrand.TabIndex = 3;
             // 
             // label3
             // 
@@ -101,7 +100,6 @@
             this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 4;
             this.label3.Text = "Preis";
-           
             // 
             // txtPrice
             // 
@@ -111,7 +109,7 @@
             this.txtPrice.Location = new System.Drawing.Point(101, 135);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(85, 20);
-            this.txtPrice.TabIndex = 7;
+            this.txtPrice.TabIndex = 9;
             // 
             // label4
             // 
@@ -141,7 +139,7 @@
             this.cbxCategorie.Location = new System.Drawing.Point(101, 102);
             this.cbxCategorie.Name = "cbxCategorie";
             this.cbxCategorie.Size = new System.Drawing.Size(165, 21);
-            this.cbxCategorie.TabIndex = 9;
+            this.cbxCategorie.TabIndex = 7;
             // 
             // bttSave
             // 
@@ -154,6 +152,7 @@
             this.bttSave.TabIndex = 10;
             this.bttSave.Text = "Speichern";
             this.bttSave.UseVisualStyleBackColor = false;
+            this.bttSave.Click += new System.EventHandler(this.BttSave_Click);
             // 
             // bttClear
             // 
@@ -166,6 +165,7 @@
             this.bttClear.TabIndex = 11;
             this.bttClear.Text = "Leeren";
             this.bttClear.UseVisualStyleBackColor = false;
+            this.bttClear.Click += new System.EventHandler(this.BttClear_Click);
             // 
             // bttEdit
             // 
@@ -178,6 +178,7 @@
             this.bttEdit.TabIndex = 12;
             this.bttEdit.Text = "Bearbeiten";
             this.bttEdit.UseVisualStyleBackColor = false;
+            this.bttEdit.Click += new System.EventHandler(this.BttEdit_Click);
             // 
             // bttDelete
             // 
@@ -190,15 +191,26 @@
             this.bttDelete.TabIndex = 13;
             this.bttDelete.Text = "Löschen";
             this.bttDelete.UseVisualStyleBackColor = false;
+            this.bttDelete.Click += new System.EventHandler(this.BttDelete_Click);
             // 
-            // dataGridView1
+            // productDGV
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.Black;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(35, 192);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(733, 257);
-            this.dataGridView1.TabIndex = 14;
+            this.productDGV.AllowUserToAddRows = false;
+            this.productDGV.AllowUserToDeleteRows = false;
+            this.productDGV.AllowUserToResizeColumns = false;
+            this.productDGV.AllowUserToResizeRows = false;
+            this.productDGV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.productDGV.BackgroundColor = System.Drawing.Color.Black;
+            this.productDGV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.productDGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.productDGV.Location = new System.Drawing.Point(35, 192);
+            this.productDGV.Name = "productDGV";
+            this.productDGV.RowHeadersVisible = false;
+            this.productDGV.RowTemplate.DefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.productDGV.RowTemplate.DefaultCellStyle.ForeColor = System.Drawing.Color.White;
+            this.productDGV.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(100)))), ((int)(((byte)(100)))));
+            this.productDGV.Size = new System.Drawing.Size(733, 257);
+            this.productDGV.TabIndex = 14;
             // 
             // ProductScreen
             // 
@@ -206,7 +218,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(799, 461);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.productDGV);
             this.Controls.Add(this.bttDelete);
             this.Controls.Add(this.bttEdit);
             this.Controls.Add(this.bttClear);
@@ -215,7 +227,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtMark);
+            this.Controls.Add(this.txtBrand);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtProductName);
             this.Controls.Add(this.label1);
@@ -223,7 +235,7 @@
             this.Name = "ProductScreen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Produkte";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productDGV)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -234,7 +246,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtProductName;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtMark;
+        private System.Windows.Forms.TextBox txtBrand;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.Label label4;
@@ -243,6 +255,6 @@
         private System.Windows.Forms.Button bttClear;
         private System.Windows.Forms.Button bttEdit;
         private System.Windows.Forms.Button bttDelete;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView productDGV;
     }
 }
