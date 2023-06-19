@@ -28,44 +28,50 @@ namespace Kunde_Biomark
 
         private void ShowProduct()
         {
-            // Hier Ladet man die Daten
+            // Öffnet die Datenbankverbindung
             dataBaseConnection.Open();
 
+            // SQL-Abfrage zum Abrufen aller Produkte
             string query = "select * from Products;";
-            // führt query aus
             SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(query, dataBaseConnection);
 
-            //Ein Ojekt erstellt mit der klasse DataSet
+            // Erstellt ein DataSet-Objekt
             DataSet dataSet = new DataSet();
 
-            // DataSet wird mit Daten gefüllt
+            // Füllt das DataSet mit Daten aus der Datenbank
             sqlDataAdapter.Fill(dataSet);
 
+            // Bindet das DataSet an die DataGridView "productDGV"
             productDGV.DataSource = dataSet.Tables[0];
+
+            // Versteckt die erste Spalte der DataGridView ("id")
             productDGV.Columns[0].Visible = false;
+
+            // Schließt die Datenbankverbindung
             dataBaseConnection.Close();
         }
 
+        
         private void BttSave_Click(object sender, EventArgs e)
         {
-            // abfragen ob eine Feld leer ist bevor man es speichert
+            // Überprüft, ob alle erforderlichen Felder ausgefüllt sind, bevor das Produkt gespeichert wird
             if (txtProductName.Text == null || txtBrand.Text == null || cbxCategorie.SelectedItem == null || txtPrice.Text == null)
             {
-               MessageBox.Show("Bitte alle Felder ausfüllen");
-                return; 
+                MessageBox.Show("Bitte alle Felder ausfüllen");
+                return;
             }
+            // Extrahiert die Werte aus den Eingabefeldern
             string productName = txtProductName.Text;
             string brand = txtBrand.Text;
             string categorie = cbxCategorie.Text;
             double price = double.Parse(txtPrice.Text);
-             //string query = "insert into Products values ('" + productName + "', '" + brand + "', '" + categorie + "', " + price + ");";
+            //string query = "insert into Products values ('" + productName + "', '" + brand + "', '" + categorie + "', " + price + ");";
 
-            // andere Variante
-            string query = string.Format("insert into Products values ('{0}','{1}','{2}', {3})", productName, brand,categorie,price);
-            
-            
+            // Erstellt eine SQL-Abfrage zum Einfügen des Produkts in die Datenbank
+            string query = string.Format("insert into Products values ('{0}','{1}','{2}', {3})", productName, brand, categorie, price);
 
 
+            // Führt die SQL-Abfrage aus
             ExecuteQuery(query);
             //dataBaseConnection.Open();
 
@@ -80,12 +86,14 @@ namespace Kunde_Biomark
             //ShowProduct();
         }
 
-
+        // Bearbeitet di
         private void BttEdit_Click(object sender, EventArgs e)
         {
+            // Überprüft, ob eine Produkt-ID ausgewählt wurde
             if (selectedProductid == 0)
             {
-                MessageBox.Show("Bitte wähle zuerst eine Produkte aus.");
+                // Zeigt eine Meldung an, dass zuerst ein Produkt ausgewählt werden muss
+                MessageBox.Show("Bitte wähle zuerst ein Produkt aus.");
                 return;
             }
 
