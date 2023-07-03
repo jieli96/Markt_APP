@@ -86,7 +86,7 @@ namespace Kunde_Biomark
             //ShowProduct();
         }
 
-        // Bearbeitet di
+        // Bearbeitet die Produkte
         private void BttEdit_Click(object sender, EventArgs e)
         {
             // Überprüft, ob eine Produkt-ID ausgewählt wurde
@@ -126,7 +126,7 @@ namespace Kunde_Biomark
             txtPrice.Text = string.Empty;
         }
 
-       
+       //  Löscht die ausgewählte Produkt
         private void BttDelete_Click(object sender, EventArgs e)
         {
             if(selectedProductid == 0)
@@ -138,6 +138,7 @@ namespace Kunde_Biomark
            ExecuteQuery(query);
         }
 
+        // Das ausgewählte Wert
         private void ProductDGV_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             txtProductName.Text = productDGV.SelectedRows[0].Cells[1].Value.ToString();
